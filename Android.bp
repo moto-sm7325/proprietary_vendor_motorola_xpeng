@@ -562,6 +562,68 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "com.arcsoft.node.capturebokeh",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/camera/components/com.arcsoft.node.capturebokeh.so",
+            ],
+            shared_libs: [
+                "libcamera_metadata",
+                "libcom.qti.chinodeutils",
+                "libcutils",
+                "libarcsoft_dualcam_refocus_image",
+                "libmpbase",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "camera/components",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.arcsoft.node.realtimebokeh",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/camera/components/com.arcsoft.node.realtimebokeh.so",
+            ],
+            shared_libs: [
+                "libcamera_metadata",
+                "libcom.qti.chinodeutils",
+                "libcutils",
+                "libarcsoft_dualcam_refocus_video",
+                "libmpbase",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "camera/components",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "com.arcsoft.node.smooth_transition",
     owner: "motorola",
     strip: {
@@ -6660,8 +6722,8 @@ cc_prebuilt_library_shared {
                 "libcutils",
                 "liblog",
                 "libhidlbase",
-                "motorola.hardware.camera.desktop@1.0",
-                "motorola.hardware.camera.desktop@2.0",
+                "motorola.hardware.camera.desktop@1.0_vendor",
+                "motorola.hardware.camera.desktop@2.0_vendor",
                 "android.hardware.graphics.bufferqueue@1.0",
                 "libnativewindow",
                 "libbinder",
@@ -7329,7 +7391,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "motorola.hardware.camera.desktop@1.0",
+    name: "motorola.hardware.camera.desktop@1.0_vendor",
+    stem: "motorola.hardware.camera.desktop@1.0",
     owner: "motorola",
     strip: {
         none: true,
@@ -7361,7 +7424,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "motorola.hardware.camera.desktop@2.0",
+    name: "motorola.hardware.camera.desktop@2.0_vendor",
+    stem: "motorola.hardware.camera.desktop@2.0",
     owner: "motorola",
     strip: {
         none: true,
@@ -7372,7 +7436,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/motorola.hardware.camera.desktop@2.0.so",
             ],
             shared_libs: [
-                "motorola.hardware.camera.desktop@1.0",
+                "motorola.hardware.camera.desktop@1.0_vendor",
                 "android.hardware.graphics.bufferqueue@2.0",
                 "android.hardware.graphics.bufferqueue@1.0",
                 "android.hardware.media@1.0",
@@ -7632,6 +7696,109 @@ cc_prebuilt_library_shared {
                 "android.hidl.memory@1.0",
                 "motorola.hardware.camera.imgtuner@1.0",
                 "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libjni_helper.motocameradesktop",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libjni_helper.motocameradesktop.so",
+            ],
+            shared_libs: [
+                "android.hardware.graphics.bufferqueue@1.0",
+                "libcutils",
+                "liblog",
+                "libui",
+                "libgui",
+                "libutils",
+                "libandroid",
+                "libhidlbase",
+                "motorola.hardware.camera.desktop@1.0",
+                "motorola.hardware.camera.desktop@2.0",
+                "libbinder",
+                "libandroid_runtime",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "motorola.hardware.camera.desktop@1.0",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/motorola.hardware.camera.desktop@1.0.so",
+            ],
+            shared_libs: [
+                "android.hardware.graphics.bufferqueue@2.0",
+                "android.hardware.graphics.common@1.0",
+                "android.hardware.graphics.common@1.1",
+                "android.hardware.graphics.common@1.2",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "motorola.hardware.camera.desktop@2.0",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/motorola.hardware.camera.desktop@2.0.so",
+            ],
+            shared_libs: [
+                "motorola.hardware.camera.desktop@1.0",
+                "android.hardware.graphics.bufferqueue@2.0",
+                "android.hardware.graphics.bufferqueue@1.0",
+                "android.hardware.media@1.0",
+                "android.hardware.graphics.common@1.0",
+                "android.hardware.graphics.common@1.1",
+                "android.hardware.graphics.common@1.2",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -7991,8 +8158,8 @@ cc_prebuilt_binary {
                 "libstagefright_bufferqueue_helper",
                 "libstagefright_foundation",
                 "libbinder",
-                "motorola.hardware.camera.desktop@1.0",
-                "motorola.hardware.camera.desktop@2.0",
+                "motorola.hardware.camera.desktop@1.0_vendor",
+                "motorola.hardware.camera.desktop@2.0_vendor",
                 "libc++",
                 "libc",
                 "libm",
