@@ -3413,7 +3413,6 @@ PRODUCT_PACKAGES += \
     libmot_afd \
     libmot_chi_desktop_helper \
     libmot_engine_settings \
-    libmpbase \
     libofflinedump \
     libofflinelog \
     libopencv \
